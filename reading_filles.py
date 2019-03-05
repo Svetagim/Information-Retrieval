@@ -2,6 +2,8 @@ import glob
 import errno
 import os
 import shutil
+import nltk
+
 
 # ----- Reading files from awaiting_documents folder -----
 
@@ -14,16 +16,21 @@ for name in folder:
     except IOError as exc:
         if exc.errno != errno.EISDIR:
             raise
+
+# ----- Creating index files -----
+
+nltk_tokens = []
+
 for file in files:
-    print(file.read())
-    print()
-    print("***************\n")
+    sentence_data = file.read()
+    nltk_tokens += nltk.word_tokenize(sentence_data)
+print(nltk_tokens)
 
 # ----- Moving files from awaiting_documents folder to retrieved_documents folder -----
 
-source = 'awaiting_documents/'
-dest = 'retrieved_documents/'
-files = os.listdir(source)
-
-for f in files:
-    shutil.move(source+f, dest)
+# source = 'awaiting_documents/'
+# dest = 'retrieved_documents/'
+# files = os.listdir(source)
+#
+# for f in files:
+#     shutil.move(source+f, dest)
