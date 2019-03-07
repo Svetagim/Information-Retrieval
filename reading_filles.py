@@ -10,6 +10,7 @@ import nltk
 path = 'awaiting_documents/*.txt'
 folder = glob.glob(path)
 files = []
+
 for name in folder:
     try:
         files.append(open(name))
@@ -25,6 +26,7 @@ for file in files:
     sentence_data = file.read()
     nltk_tokens += nltk.word_tokenize(sentence_data)
 print(nltk_tokens)
+
 
 # ----- Moving files from awaiting_documents folder to retrieved_documents folder -----
 
