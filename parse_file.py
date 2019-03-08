@@ -1,4 +1,5 @@
 import pymongo
+from nltk.corpus import stopwords
 
 
 def connectToDB():
@@ -19,5 +20,5 @@ def findMaxDocID(DocCol):
 if __name__ == '__main__':
     DocCol = connectToDB()
     doc_id = findMaxDocID(DocCol)  # new id for the new doc
-
+    stopwords.words('english')
     exit(0)
