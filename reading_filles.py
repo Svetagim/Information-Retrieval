@@ -6,7 +6,6 @@ import nltk
 
 
 # ----- Reading files from awaiting_documents folder -----
-
 path = 'awaiting_documents/*.txt'
 folder = glob.glob(path)
 files = []
@@ -28,10 +27,10 @@ for file in files:
 print(nltk_tokens)
 
 
-# ----- Moving files from awaiting_documents folder to retrieved_documents folder -----
+# ----- Moving files from awaiting_documents folder to Documents folder -----
 
 # source = 'awaiting_documents/'
-# dest = 'retrieved_documents/'
+# dest = 'Documents/'
 # files = os.listdir(source)
 #
 # for f in files:

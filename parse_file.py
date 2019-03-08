@@ -1,7 +1,8 @@
 import pymongo
 
+
 def connectToDB():
-    myClient = pymongo.MongoClient("mongodb://localhost:27017/")
+    myClient = pymongo.MongoClient("mongodb://127.0.0.1:27017/")
     mydb = myClient["ir"]
     DocCol = mydb["docCollection"]
     return DocCol
@@ -10,11 +11,13 @@ def connectToDB():
 def findMaxDocID(DocCol):
     max = 0
     for doc in DocCol.find():
-        print(doc['id'])
-        if (doc['id'] > max):
-            max = doc['id']
+        if (doc['doc_id'] > max):
+            max = doc['doc_id']
     return max + 1
+
 
 if __name__ == '__main__':
     DocCol = connectToDB()
-    doc_id = findMaxDocID(DocCol) # new id for the new doc
+    doc_id = findMaxDocID(DocCol)  # new id for the new doc
+
+    exit(0)
