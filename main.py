@@ -12,7 +12,7 @@ def Insert_New_Docs():
         doc_name = files_utils.Get_Doc_MetaData(doc_index)
         DocCol = parse_file.connectToDB()
         doc_id = parse_file.findMaxDocID(DocCol)  # new id for the new doc
-        print(str(int(doc_id)) + " " + doc_name)
+        print(str(int(doc_id)) + " " + doc_name[0])
     # files_utils.moveDocsBetweenDirs()
     # print(stopwords.words('english'))
 

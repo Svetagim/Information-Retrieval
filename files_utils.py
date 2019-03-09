@@ -23,6 +23,7 @@ def Pull_Documents():
     return docs_arr
 
 def Get_Doc_MetaData(doc_index):
+    doc_metadata = []
     # Find occurrence of the word 'by'
     # For doc name
     index = 0
@@ -35,24 +36,30 @@ def Get_Doc_MetaData(doc_index):
         doc_name += doc_index[word] + " "
     # remove the space after the last word
     doc_name = doc_name.rstrip()
+    doc_metadata.append(doc_name)
     # END doc name
 
     # Find occurrence of the char ':'
     # For doc author
-    index = 0
-    doc_name = ""
+    left_border = 0
+    right_border = 0
+    doc_author = ""
     for word in doc_index:
         if (word == ':'):
-
             break
-        index = index + 1
-    for word in range(index):
-        doc_name += doc_index[word] + " "
+        left_border = left_border + 1
+    for word in range(left_border, left_border+15):
+        if(word == '('):
+            break
+        right_border = right_border + 1
+    right_border += 1
+    for word in range(left_border,right_border):
+        print(doc_index[word])
     # remove the space after the last word
-    doc_name = doc_name.rstrip()
+    doc_author = doc_author.rstrip()
     # END doc author
 
-    return doc_name
+    return doc_metadata
 
 
     # ----- Creating index files -----
