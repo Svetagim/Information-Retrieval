@@ -18,7 +18,7 @@ def Insert_New_Docs():
     log("Build the invert file")
     log("Parse + Sort the table")
     parse_file.Sort_Invert_File()
-    parse_file.Sort_Invert_File_Frequency()
+    parse_file.Sort_Invert_File_Frequency(doc_index)
     # files_utils.moveDocsBetweenDirs()
     # print(stopwords.words('english'))
 
