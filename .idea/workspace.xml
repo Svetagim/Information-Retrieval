@@ -48,8 +48,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/parse_file.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="51">
-                  <caret line="72" column="15" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="15" />
+                <state relative-caret-position="68">
+                  <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
                   <folding>
                     <element signature="e#0#14#0" expanded="true" />
                   </folding>
@@ -330,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1552391687600</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="before changing Sort_Invert_File_Frequency">
+      <created>1552399592193</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1552399592194</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView">
@@ -378,7 +385,8 @@
     <MESSAGE value="filter the index file" />
     <MESSAGE value="Parsing table into db" />
     <MESSAGE value="lower case all the words + sort the invert file" />
-    <option name="LAST_COMMIT_MESSAGE" value="lower case all the words + sort the invert file" />
+    <MESSAGE value="before changing Sort_Invert_File_Frequency" />
+    <option name="LAST_COMMIT_MESSAGE" value="before changing Sort_Invert_File_Frequency" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.MD">
@@ -431,8 +439,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/parse_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="72" column="15" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="15" />
+        <state relative-caret-position="68">
+          <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
