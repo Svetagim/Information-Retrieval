@@ -28,6 +28,13 @@ def Create_Doc_Index(doc):
     return nltk_tokens
 
 
+def Parsing(doc_index):
+    left_border = doc_index.index(')') + 1
+    new_doc_index = []
+    for word_index in range(left_border, len(doc_index)):
+        new_doc_index.append(doc_index[word_index])
+    return new_doc_index
+
 def Insert_New_Doc_Record_to_DB(doc_metadata, docCollection):
     myquery = {
         "id": doc_metadata[3],
@@ -48,7 +55,7 @@ def Build_Invert_File(doc_index, doc_id):
         word = word.rstrip()
         word = word.lower()
 
-        if (str(re.findall(r'[a-zA-Z]+', word)) == "[]"):
+        if (str(re.findall(r'[a-zA-Z]', word)) == "[]"):
             del doc_index[index_to_delete]
         else:
             myquery = {
