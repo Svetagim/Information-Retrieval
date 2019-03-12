@@ -46,6 +46,8 @@ def Build_Invert_File(doc_index, doc_id):
     for word in doc_index:
         word = word.lstrip()
         word = word.rstrip()
+        word = word.lower()
+
         if (str(re.findall(r'[a-zA-Z]+', word)) == "[]"):
             del doc_index[index_to_delete]
         else:
@@ -55,3 +57,13 @@ def Build_Invert_File(doc_index, doc_id):
             }
             invertColl.insert_one(myquery)
         index_to_delete += 1
+
+
+def Sort_Invert_File():
+    invertColl = connectToDB("invertFile")
+    # - Sort the invertCollection in db
+    pipeline = [
+        {"$sort": {"Term": 1}},
+        {"$out": "invertFile"}
+    ]
+    invertColl.aggregate(pipeline)

@@ -14,9 +14,10 @@ def Insert_New_Docs():
         log("Processing: " + str(int(doc_id)) + " " + doc_metadata[0] + " " + doc_metadata[1] + " " + doc_metadata[2])
         parse_file.Insert_New_Doc_Record_to_DB(doc_metadata, docsCollection)
         log("The new doc has documented in the DB")
-        log("Build inverted file")
         parse_file.Build_Invert_File(doc_index, doc_id)
-
+    log("Build the invert file")
+    log("Parse + Sort the table")
+    parse_file.Sort_Invert_File()
     # files_utils.moveDocsBetweenDirs()
     # print(stopwords.words('english'))
 
