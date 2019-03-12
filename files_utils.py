@@ -2,12 +2,12 @@ import glob
 import errno
 import os
 import shutil
-import nltk
 
 
 # ----- Reading files from awaiting_documents folder -----
 path = 'awaiting_documents/*.txt'
 docs_path = glob.glob(path)
+
 
 # ----- Pull Document from 'awaiting_documents' and start handle him -----
 def Pull_Documents():
@@ -21,6 +21,7 @@ def Pull_Documents():
             if exc.errno != errno.EISDIR:
                 raise
     return docs_arr
+
 
 def Get_Doc_MetaData(doc_index):
     doc_metadata = []
@@ -42,31 +43,36 @@ def Get_Doc_MetaData(doc_index):
     # Find occurrence of the char ':'
     # For doc author
     left_border = 0
-    right_border = 0
+
     doc_author = ""
     for word in doc_index:
         if (word == ':'):
             break
         left_border = left_border + 1
-    for word in range(left_border, left_border+15):
-        if(word == '('):
+    left_border = left_border + 1
+    right_border = left_border
+    for word in range(right_border, right_border+5):
+        if (doc_index[word] == '('):
             break
         right_border = right_border + 1
-    right_border += 1
-    for word in range(left_border,right_border):
-        print(doc_index[word])
+    for word in range(left_border, right_border):
+        doc_author += " " + doc_index[word]
     # remove the space after the last word
     doc_author = doc_author.rstrip()
+    doc_author = doc_author.lstrip()
+    doc_metadata.append(doc_author)
+    # END doc author
+
+    # Find occurrence of the char ':'
+    # For doc date of creation
+    left_border = right_border + 1
+    doc_metadata.append(doc_index[left_border])
     # END doc author
 
     return doc_metadata
 
 
     # ----- Creating index files -----
-def Create_Doc_Index(doc):
-    sentence_data = doc.read()
-    nltk_tokens = nltk.word_tokenize(sentence_data)
-    return nltk_tokens
 
 
 # ----- Moving files from awaiting_documents folder to documents folder -----
