@@ -35,6 +35,7 @@ def Parsing(doc_index):
         new_doc_index.append(doc_index[word_index])
     return new_doc_index
 
+
 def Insert_New_Doc_Record_to_DB(doc_metadata, docCollection):
     myquery = {
         "id": doc_metadata[3],
@@ -77,35 +78,32 @@ def Sort_Invert_File():
     invertColl.aggregate(pipeline)
 
 
-def Sort_Invert_File_Frequency(doc_index):
-    counter = nltk.Counter(doc_index)
-    print(counter)
-
-    # invertColl = connectToDB("invertFile")
-    # counter = 1
-    # test_i = 1
-    # for term in invertColl.find():
-    #     print("first loop: " + str(term))
-    #     myquery = {"_id": { "$ne": term['_id'] }, "Term": term['Term'], "Doc Id": term['Doc Id']}
-    #     for x in invertColl.find(myquery):
-    #         print("second loop: " + str(x))
-    #         myquery = {
-    #             "_id": x["_id"]
-    #         }
-    #         invertColl.delete_one(myquery)
-    #         counter += 1
-    #     myquery = {
-    #         "_id": term['_id'],
-    #         "Hit": term['Hit'],
-    #     }
-    #     newvalues = {
-    #         "$set": {
-    #             "_id": term['_id'],
-    #             "Hit": counter
-    #         }
-    #     }
-    #     invertColl.update_one(myquery, newvalues)
-    #     counter = 1
-    #     if ( test_i == 2):
-    #         break
-    #     test_i += 1
+def Sort_Invert_File_Frequency():
+    invertColl = connectToDB("invertFile")
+    counter = 1
+    test_i = 1
+    for term in invertColl.find():
+        print("first loop: " + str(term))
+        myquery = {"_id": { "$ne": term['_id'] }, "Term": term['Term'], "Doc Id": term['Doc Id']}
+        for x in invertColl.find(myquery):
+            print("second loop: " + str(x))
+            myquery = {
+                "_id": x["_id"]
+            }
+            invertColl.delete_one(myquery)
+            counter += 1
+        myquery = {
+            "_id": term['_id'],
+            "Hit": term['Hit'],
+        }
+        newvalues = {
+            "$set": {
+                "_id": term['_id'],
+                "Hit": counter
+            }
+        }
+        invertColl.update_one(myquery, newvalues)
+        counter = 1
+        if ( test_i == 2):
+            break
+        test_i += 1
