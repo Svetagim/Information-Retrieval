@@ -82,5 +82,5 @@ def moveDocsBetweenDirs():
     files = os.listdir(source)
 
     for f in files:
-        shutil.move(source+f, dest+f)
+         shutil.move(source+f, dest+f)
     return True
