@@ -1,6 +1,7 @@
 import pymongo
 import nltk
-import re
+from collections import Counter
+from nltk.corpus import stopwords
 
 
 
@@ -12,20 +13,23 @@ def connectToDB(collection):
 
 
 def findMaxDocID(DocCol):
-    x = DocCol.find_one()
-    if(x != "none"):
-        max = 0
-        for doc in DocCol.find():
-            if (doc['id'] > max):
-                max = doc['id']
-        return max + 1
-    else:
-        return 0
+    x = DocCol.find().count()
+    return x
+
+
+def Insert_New_Doc_Record_to_DB(doc_metadata, docCollection):
+    myquery = {
+        "id": doc_metadata[0],
+        "name": doc_metadata[1],
+        "author": doc_metadata[2],
+        "date_of_create": doc_metadata[3]
+    }
+    docCollection.insert_one(myquery)
 
 
 def Get_Doc_Metadata(doc_index):
     doc_metadata = []
-    doc_id = findMaxDocID(connectToDB("docsCollection"))
+    doc_id = findMaxDocID(connectToDB("docs"))
     doc_metadata.append(doc_id)
     # Find occurrence of the word 'by'
     # For doc name
@@ -79,12 +83,14 @@ def Create_Doc_Index(doc):
     tokens = nltk.word_tokenize(sentence_data)
     for i, t in enumerate(tokens):
         if "'" in t:
-            left = tokens[i - 1]
-            left += t
-            tokens[i - 1] = left
-            del tokens[i]
-            i += 1
+            if(len(t) == 3 and t[-2] == "'"):
+                left = tokens[i - 1]
+                left += t
+                tokens[i - 1] = left
+                del tokens[i]
+                i += 1
     return tokens
+
 
 def Filter_Index(doc_index):
     doc_index_new = []
@@ -94,8 +100,75 @@ def Filter_Index(doc_index):
             break
         index += 1
     index += 1
+
+    #trim bad chars + lower case
     bad_chars = [",",".","--",";","#","!"]
     for i in range(index, len(doc_index)):
-        if(doc_index[i] not in bad_chars):
+        doc_index[i] = doc_index[i].lower()
+        if((doc_index[i] not in bad_chars) and (doc_index[i] not in stopwords.words('english'))):
             doc_index_new.append(doc_index[i])
-    print(doc_index_new)
+    return doc_index_new
+
+
+def Parse_Index(doc_index, doc_id, indexCollection):
+    indexCol = connectToDB("indexCollection")
+    counter = Counter(doc_index)
+    for key, val in counter.items():
+        myquery = {
+            "term": key,
+            "doc": doc_id,
+            "hit": val
+        }
+        indexCol.insert_one(myquery)
+
+def Sort_Index_File(collection_name):
+    indexColl = connectToDB(collection_name)
+    # - Sort the invertCollection in db
+    pipeline = [
+        {"$sort": {"term": 1}},
+        {"$out": collection_name}
+    ]
+    indexColl.aggregate(pipeline)
+
+
+def Create_Posting_File(doc_id, doc_index):
+    postCol = connectToDB("inverted")
+    counter = Counter(doc_index)
+    query = {
+        "doc": doc_id,
+        "terms": counter
+    }
+    postCol.insert_one(query)
+
+
+def Create_Inverted_File(indexCollection):
+    indexCol = connectToDB(indexCollection)
+    newindexCol = connectToDB(indexCollection+"_new")
+    length = indexCol.find().count()
+    terms = indexCol.find()
+    counter = 0
+    indicator = 0
+    locations = []
+
+    for i in range(0, length-1):
+        if(indicator >= length-1):
+            break
+        locations.append({'doc': terms[indicator]['doc'], 'hit': terms[indicator]['hit']})
+        term = terms[indicator]['term']
+        counter = 1
+        while True:
+            indicator += 1
+            if(terms[indicator]['term'] != term or indicator >= length):
+                break
+            locations.append({'doc': terms[indicator]['doc'], 'hit': terms[indicator]['hit']})
+            counter += 1
+        query = {
+            "term": term,
+            "num_of_docs": counter,
+            "locations": locations
+        }
+        newindexCol.insert_one(query)
+        locations = []
+#doc id
+#hit
+

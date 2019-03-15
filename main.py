@@ -1,4 +1,4 @@
-#import parse_file
+from nltk.tokenize import word_tokenize
 import parse_file2
 import files_utils
 
@@ -28,16 +28,34 @@ import files_utils
 
 def Insert_New_Docs2():
     docs_arr = files_utils.Pull_Documents()  # Retrieve the docs available in the wait folder
+    mash_index_file = []
     for doc in docs_arr:
         doc_index = parse_file2.Create_Doc_Index(doc)
         doc_metadata = parse_file2.Get_Doc_Metadata(doc_index)
-        parse_file2.Filter_Index(doc_index)
+        docCol = parse_file2.connectToDB("docs")
+        parse_file2.Insert_New_Doc_Record_to_DB(doc_metadata, docCol)
+        doc_index = parse_file2.Filter_Index(doc_index)
+        parse_file2.Parse_Index(doc_index, doc_metadata[0], "indexCollection")
+    parse_file2.Sort_Index_File("indexCollection")
+    parse_file2.Create_Inverted_File("indexCollection")
+
 
 def log(msg):
     print("- " + msg)
 
 
+def Clear_Old_Record_in_DB():
+    col_to_del = parse_file2.connectToDB("docs")
+    col_to_del.delete_many({})
+    col_to_del = parse_file2.connectToDB("indexCollection")
+    col_to_del.delete_many({})
+    col_to_del = parse_file2.connectToDB("indexCollection_new")
+    col_to_del.delete_many({})
+    col_to_del = parse_file2.connectToDB("inverted")
+    col_to_del.delete_many({})
+
 if __name__ == '__main__':
     #Insert_New_Docs()
+    Clear_Old_Record_in_DB()
     Insert_New_Docs2()
     exit(0)
