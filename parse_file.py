@@ -140,6 +140,46 @@ def Create_Posting_File(doc_id, doc_index):
     postCol.insert_one(query)
 
 
+def sdx(st):
+    soundex=st[0]
+    s=1
+    letters= ["AEHIOUWYaehiouwy",
+    "BFPVbfpv",
+    "CGJKQSXZcgjkqsxz",
+    "DTdt",
+    "Ll",
+    "MNmn",
+    "Rr"]
+
+    i=1
+    while i < len(st):
+        j = 0
+        while j<len(letters):
+            if letters[j].find(st[i]) != -1:
+                soundex+=str(j)
+                break
+            j+=1
+        i+=1
+
+    sound=soundex[0]
+    i=1
+    while i < len(soundex):
+        if soundex[i]!='0':
+            sound+=soundex[i]
+        i+=1
+    i=1
+    soundex=sound[0]
+    while i < len(sound):
+        if sound[i] != sound[i-1]:
+            soundex+=sound[i]
+        i+=1
+
+    while len(soundex)<4:
+        soundex+="0"
+
+    return(soundex)
+
+
 def Create_Inverted_File(indexCollection):
     indexCol = connectToDB(indexCollection)
     newindexCol = connectToDB(indexCollection+"_new")
@@ -165,6 +205,7 @@ def Create_Inverted_File(indexCollection):
                 counter += 1
             query = {
                 "term": term,
+                "soundex": sdx(term),
                 "num_of_docs": counter,
                 "locations": locations
             }

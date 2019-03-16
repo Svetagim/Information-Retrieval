@@ -40,6 +40,6 @@ def Clear_Old_Record_in_DB():
 
 
 if __name__ == '__main__':
-    #Clear_Old_Record_in_DB()
+    Clear_Old_Record_in_DB()
     Insert_New_Docs()
     exit(0)
