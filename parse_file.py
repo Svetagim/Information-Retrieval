@@ -1,6 +1,8 @@
 import pymongo
 import nltk
-import re
+from collections import Counter
+from nltk.corpus import stopwords
+
 
 
 def connectToDB(collection):
@@ -11,99 +13,159 @@ def connectToDB(collection):
 
 
 def findMaxDocID(DocCol):
-    x = DocCol.find_one()
-    if(x != "none"):
-        max = 0
-        for doc in DocCol.find():
-            if (doc['id'] > max):
-                max = doc['id']
-        return max + 1
-    else:
-        return 0
-
-
-def Create_Doc_Index(doc):
-    sentence_data = doc.read()
-    nltk_tokens = nltk.word_tokenize(sentence_data)
-    return nltk_tokens
-
-
-def Parsing(doc_index):
-    left_border = doc_index.index(')') + 1
-    new_doc_index = []
-    for word_index in range(left_border, len(doc_index)):
-        new_doc_index.append(doc_index[word_index])
-    return new_doc_index
+    x = DocCol.find().count()
+    return x
 
 
 def Insert_New_Doc_Record_to_DB(doc_metadata, docCollection):
     myquery = {
-        "id": doc_metadata[3],
-        "name": doc_metadata[0],
-        "author": doc_metadata[1],
-        "date_of_create": doc_metadata[2]
+        "id": doc_metadata[0],
+        "name": doc_metadata[1],
+        "author": doc_metadata[2],
+        "date_of_create": doc_metadata[3]
     }
     docCollection.insert_one(myquery)
 
 
-def Build_Invert_File(doc_index, doc_id):
-    # Building the inverted table
-    # - Filtering + Parsing
-    invertColl = connectToDB("invertFile")
-    index_to_delete = 0
+def Get_Doc_Metadata(doc_index):
+    doc_metadata = []
+    doc_id = findMaxDocID(connectToDB("docs"))
+    doc_metadata.append(doc_id)
+    # Find occurrence of the word 'by'
+    # For doc name
+    index = 0
+    doc_name = ""
     for word in doc_index:
-        word = word.lstrip()
-        word = word.rstrip()
-        word = word.lower()
+        if (word == 'by'):
+            break
+        index = index + 1
+    for word in range(index):
+        doc_name += doc_index[word] + " "
+    # remove the space after the last word
+    doc_name = doc_name.rstrip()
+    doc_metadata.append(doc_name)
+    # END doc name
 
-        if (str(re.findall(r'[a-zA-Z]', word)) == "[]"):
-            del doc_index[index_to_delete]
-        else:
-            myquery = {
-                "Term": word,
-                "Doc Id": doc_id,
-                "Hit": 0
-            }
-            invertColl.insert_one(myquery)
-        index_to_delete += 1
+    # Find occurrence of the char ':'
+    # For doc author
+    left_border = 0
+
+    doc_author = ""
+    for word in doc_index:
+        if (word == ':'):
+            break
+        left_border = left_border + 1
+    left_border = left_border + 1
+    right_border = left_border
+    for word in range(right_border, right_border + 5):
+        if (doc_index[word] == '('):
+            break
+        right_border = right_border + 1
+    for word in range(left_border, right_border):
+        doc_author += " " + doc_index[word]
+    # remove the space after the last word
+    doc_author = doc_author.rstrip()
+    doc_author = doc_author.lstrip()
+    doc_metadata.append(doc_author)
+    # END doc author
+
+    # Find occurrence of the char ':'
+    # For doc date of creation
+    left_border = right_border + 1
+    doc_metadata.append(doc_index[left_border])
+    # END doc author
+
+    return doc_metadata
+
+# ----- Creating index files -----
+def Create_Doc_Index(doc):
+    sentence_data = doc.read()
+    tokens = nltk.word_tokenize(sentence_data)
+    for i, t in enumerate(tokens):
+        if "'" in t:
+            if(len(t) == 3 and t[-2] == "'"):
+                left = tokens[i - 1]
+                left += t
+                tokens[i - 1] = left
+                del tokens[i]
+                i += 1
+    return tokens
 
 
-def Sort_Invert_File():
-    invertColl = connectToDB("invertFile")
+def Filter_Index(doc_index):
+    doc_index_new = []
+    index = 0
+    for word in doc_index:
+        if(word == ")"):
+            break
+        index += 1
+    index += 1
+
+    #trim bad chars + lower case
+    bad_chars = [",",".","--",";","#","!",":","?"]
+    for i in range(index, len(doc_index)):
+        doc_index[i] = doc_index[i].lower()
+        if((doc_index[i] not in bad_chars) and (doc_index[i] not in stopwords.words('english'))):
+            doc_index_new.append(doc_index[i])
+    return doc_index_new
+
+
+def Parse_Index(doc_index, doc_id, indexCollection):
+    indexCol = connectToDB("indexCollection")
+    counter = Counter(doc_index)
+    for key, val in counter.items():
+        myquery = {
+            "term": key,
+            "doc": doc_id,
+            "hit": val
+        }
+        indexCol.insert_one(myquery)
+
+def Sort_Index_File(collection_name):
+    indexColl = connectToDB(collection_name)
     # - Sort the invertCollection in db
     pipeline = [
-        {"$sort": {"Term": 1}},
-        {"$out": "invertFile"}
+        {"$sort": {"term": 1}},
+        {"$out": collection_name}
     ]
-    invertColl.aggregate(pipeline)
+    indexColl.aggregate(pipeline)
 
 
-def Sort_Invert_File_Frequency():
-    invertColl = connectToDB("invertFile")
-    counter = 1
-    test_i = 1
-    for term in invertColl.find():
-        print("first loop: " + str(term))
-        myquery = {"_id": { "$ne": term['_id'] }, "Term": term['Term'], "Doc Id": term['Doc Id']}
-        for x in invertColl.find(myquery):
-            print("second loop: " + str(x))
-            myquery = {
-                "_id": x["_id"]
-            }
-            invertColl.delete_one(myquery)
-            counter += 1
-        myquery = {
-            "_id": term['_id'],
-            "Hit": term['Hit'],
-        }
-        newvalues = {
-            "$set": {
-                "_id": term['_id'],
-                "Hit": counter
-            }
-        }
-        invertColl.update_one(myquery, newvalues)
-        counter = 1
-        if ( test_i == 2):
+def Create_Posting_File(doc_id, doc_index):
+    postCol = connectToDB("inverted")
+    counter = Counter(doc_index)
+    query = {
+        "doc": doc_id,
+        "terms": counter
+    }
+    postCol.insert_one(query)
+
+
+def Create_Inverted_File(indexCollection):
+    indexCol = connectToDB(indexCollection)
+    newindexCol = connectToDB(indexCollection+"_new")
+    length = indexCol.find().count()
+    terms = indexCol.find()
+    indicator = 0
+    locations = []
+
+    for i in range(0, length-1):
+        if(indicator >= length-1):
             break
-        test_i += 1
+        locations.append({'doc': terms[indicator]['doc'], 'hit': terms[indicator]['hit']})
+        term = terms[indicator]['term']
+        counter = 1
+        while True:
+            indicator += 1
+            if(terms[indicator]['term'] != term or indicator >= length):
+                break
+            locations.append({'doc': terms[indicator]['doc'], 'hit': terms[indicator]['hit']})
+            counter += 1
+        query = {
+            "term": term,
+            "num_of_docs": counter,
+            "locations": locations
+        }
+        newindexCol.insert_one(query)
+        locations = []
+

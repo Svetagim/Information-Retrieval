@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a537ad5-4745-4a48-a053-e468c747448d" name="Default Changelist" comment="Before changing the main">
+    <list default="true" id="c4f81bbf-d9e0-4f34-9ea3-ab72ae3abfe6" name="Default Changelist" comment="Parsing the index">
+      <change beforePath="$PROJECT_DIR$/.idea/final project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/__NLP_LESSON_DECEMBER_2018 - עותק-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/awaiting_documents/BESSIES SONG TO_HER DOLL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/awaiting_documents/CRADLE SONG.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parse_file2.py" beforeDir="false" afterPath="$PROJECT_DIR$/parse_file2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,16 +21,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.42128935">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="142">
-                  <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+                <state relative-caret-position="157">
+                  <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
                   <folding>
-                    <element signature="e#0#33#0" expanded="true" />
+                    <element signature="e#1#19#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -31,31 +41,28 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/parse_file.py">
+            <entry file="file://$PROJECT_DIR$/files_utils.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+                <state relative-caret-position="273">
+                  <caret line="80" column="23" lean-forward="true" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
                   <folding>
-                    <element signature="e#0#14#0" expanded="true" />
+                    <element signature="e#0#11#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/venv/parse_file2.py">
+            <entry file="file://$PROJECT_DIR$/parse_file2.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/awaiting_documents/BESSIES SONG TO_HER DOLL.txt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="18" column="23" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="23" />
+                <state relative-caret-position="262">
+                  <caret line="104" column="48" selection-start-line="104" selection-start-column="48" selection-end-line="104" selection-end-column="48" />
+                  <folding>
+                    <element signature="e#0#14#0" expanded="true" />
+                    <element signature="e#2990#3243#0" />
+                    <element signature="e#3287#3490#0" />
+                    <element signature="e#3541#3705#0" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -64,84 +71,67 @@
       </split-second>
     </splitter>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>folder</find>
-      <find>files</find>
-      <find>docs</find>
-      <find>thy</find>
-      <find>re</find>
+      <find>rest</find>
+      <find>'i'</find>
+      <find>matilda</find>
+      <find>and</find>
+      <find>O'er</find>
       <find>'s</find>
+      <find>n't</find>
+      <find>need</find>
+      <find>'</find>
+      <find>jane</find>
+      <find>needn</find>
+      <find>o'er</find>
+      <find>needn't</find>
+      <find>o'</find>
     </findStrings>
-    <replaceStrings>
-      <replace>awaiting_docs_path</replace>
-      <replace>docs</replace>
-      <replace>docs_arr</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="Yaniv" />
-      </list>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/README.MD" />
-        <option value="$PROJECT_DIR$/reading_filles.py" />
-        <option value="$PROJECT_DIR$/Documents/CRADLE SONG2.txt" />
-        <option value="$PROJECT_DIR$/files_utils.py" />
-        <option value="$PROJECT_DIR$/awaiting_documents/CRADLE SONG.txt" />
         <option value="$PROJECT_DIR$/parse_file.py" />
+        <option value="$PROJECT_DIR$/awaiting_documents/test.txt" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/awaiting_documents/BESSIES SONG TO_HER DOLL.txt" />
+        <option value="$PROJECT_DIR$/awaiting_documents/CRADLE SONG.txt" />
+        <option value="$PROJECT_DIR$/files_utils.py" />
+        <option value="$PROJECT_DIR$/documents/CRADLE SONG.txt" />
+        <option value="$PROJECT_DIR$/documents/BESSIES SONG TO_HER DOLL.txt" />
+        <option value="$PROJECT_DIR$/awaiting_documents/amoret.txt" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/venv/parse_file2.py" />
+        <option value="$PROJECT_DIR$/parse_file2.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
-    <option name="width" value="1939" />
-    <option name="height" value="1049" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Information-Retrieval" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Information-Retrieval" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Information-Retrieval" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Information-Retrieval" type="462c0819:PsiDirectoryNode" />
-              <item name="awaiting_documents" type="462c0819:PsiDirectoryNode" />
+              <item name="Information_Retrieval" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Information_Retrieval" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -149,11 +139,12 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\benhay\Google Drive\Education\Year3\Semester-A\Data_Restoration\Project\Information-Retrieval\awaiting_documents" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\benhay\Google Drive\Education\Year3\Semester-A\Data_Restoration\Project\Information-Retrieval\awaiting_documents" />
+      <recent name="C:\Users\benhay\Documents\PycharmProjects\Information_Retrieval\awaiting_documents" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\benhay\Documents\PycharmProjects\Information_Retrieval\awaiting_documents" />
+      <recent name="C:\Users\benhay\Documents\PycharmProjects\Information_Retrieval\Docs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -168,15 +159,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python">
-      <module name="final project" />
+  <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Information_Retrieval" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\benhay\Google Drive\Education\Year3\Semester-A\Data_Restoration\Project\Information-Retrieval\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\benhay\AppData\Local\Programs\Python\Python37-32\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -190,19 +181,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="parse_file" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="final project" />
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Information_Retrieval" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\benhay\Google Drive\Education\Year3\Semester-A\Data_Restoration\Project\Information-Retrieval\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\benhay\AppData\Local\Programs\Python\Python37-32\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/parse_file.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -211,172 +202,41 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="reading_filles" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="final project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\benhay\Google Drive\Education\Year3\Semester-A\Data_Restoration\Project\Information-Retrieval\files_utils.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Python.parse_file" />
-      <item itemvalue="Python.main" />
-      <item itemvalue="Python.reading_filles" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.reading_filles" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9a537ad5-4745-4a48-a053-e468c747448d" name="Default Changelist" comment="" />
-      <created>1551804938957</created>
+      <changelist id="c4f81bbf-d9e0-4f34-9ea3-ab72ae3abfe6" name="Default Changelist" comment="" />
+      <created>1552594636599</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1551804938957</updated>
+      <updated>1552594636599</updated>
     </task>
-    <task id="LOCAL-00001" summary="add readme">
-      <created>1551969200687</created>
+    <task id="LOCAL-00001" summary="Parsing the index">
+      <created>1552601274598</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1551969200687</updated>
+      <updated>1552601274598</updated>
     </task>
-    <task id="LOCAL-00002" summary="add readme">
-      <created>1551995654790</created>
+    <task id="LOCAL-00002" summary="Generating Inverted file like in presentation 04, slide 6">
+      <created>1552657699145</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1551995654790</updated>
+      <updated>1552657699145</updated>
     </task>
-    <task id="LOCAL-00003" summary="add readme">
-      <created>1552033472361</created>
+    <task id="LOCAL-00003" summary="Parsing the index">
+      <created>1552662199566</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1552033472361</updated>
+      <updated>1552662199566</updated>
     </task>
-    <task id="LOCAL-00004" summary="adding stop words">
-      <created>1552053380848</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1552053380848</updated>
-    </task>
-    <task id="LOCAL-00005" summary="reading_files">
-      <created>1552053929669</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1552053929669</updated>
-    </task>
-    <task id="LOCAL-00006" summary="reading_files to files_utils">
-      <created>1552054883674</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1552054883674</updated>
-    </task>
-    <task id="LOCAL-00007" summary="- insert new docs function&#10;- Find doc meta data">
-      <created>1552063130185</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1552063130185</updated>
-    </task>
-    <task id="LOCAL-00008" summary="- insert new docs function&#10;- Find doc meta data">
-      <created>1552126149721</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1552126149721</updated>
-    </task>
-    <task id="LOCAL-00009" summary="General">
-      <created>1552245100761</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1552245100761</updated>
-    </task>
-    <task id="LOCAL-00010" summary="filter the index file">
-      <created>1552386979232</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1552386979232</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Parsing table into db">
-      <created>1552389305602</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1552389305602</updated>
-    </task>
-    <task id="LOCAL-00012" summary="lower case all the words + sort the invert file">
-      <created>1552391687600</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1552391687600</updated>
-    </task>
-    <task id="LOCAL-00013" summary="before changing Sort_Invert_File_Frequency">
-      <created>1552399592193</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1552399592194</updated>
-    </task>
-    <task id="LOCAL-00014" summary="before changing Sort_Invert_File_Frequency">
-      <created>1552399650316</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1552399650316</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Before changing the main">
-      <created>1552417970128</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1552417970128</updated>
-    </task>
-    <task id="LOCAL-00016" summary="parse2">
-      <created>1552421743460</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1552421743460</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="4" />
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -385,121 +245,148 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.118308" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32719547" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.398017" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32902297" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="R Graphics" order="3" />
-      <window_info anchor="right" id="R Packages" order="4" />
     </layout>
-  </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ORDER">
-      <list>
-        <option value="0" />
-        <option value="2" />
-        <option value="3" />
-        <option value="1" />
-      </list>
-    </option>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.118308" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add readme" />
-    <MESSAGE value="fixing mongo code" />
-    <MESSAGE value="adding stop words" />
-    <MESSAGE value="reading_files" />
-    <MESSAGE value="reading_files to files_utils" />
-    <MESSAGE value="- insert new docs function&#10;- Find doc meta data" />
-    <MESSAGE value="General" />
-    <MESSAGE value="filter the index file" />
-    <MESSAGE value="Parsing table into db" />
-    <MESSAGE value="lower case all the words + sort the invert file" />
-    <MESSAGE value="before changing Sort_Invert_File_Frequency" />
-    <MESSAGE value="Before changing the main" />
-    <MESSAGE value="parse2" />
-    <option name="LAST_COMMIT_MESSAGE" value="parse2" />
+    <MESSAGE value="Generating Inverted file like in presentation 04, slide 6" />
+    <MESSAGE value="Parsing the index" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parsing the index" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.MD">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="9" selection-start-column="9" selection-end-column="9" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/Docs/test.txt" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="309" selection-start-line="309" selection-end-line="309" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/retrieved_documents.txt" />
-    <entry file="file://$PROJECT_DIR$/awaiting_documents/CRADLE SONG2.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/re.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="275" selection-start-line="275" selection-end-line="275" />
+        <state>
+          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/pymongo/helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parse_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#72#200#0" />
+            <element signature="e#233#441#0" />
+            <element signature="e#607#803#0" />
+            <element signature="e#872#1068#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/awaiting_documents/CRADLE SONG.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+        <state relative-caret-position="85">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/awaiting_documents/BESSIES SONG TO_HER DOLL.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/awaiting_documents/BESSIES SONG TO_HER DOLL.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/awaiting_documents/CRADLE SONG.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/awaiting_documents/amoret.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/files_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-661">
-          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+        <state relative-caret-position="273">
+          <caret line="80" column="23" lean-forward="true" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/awaiting_documents/BESSIES SONG TO_HER DOLL.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parse_file.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        <state relative-caret-position="157">
+          <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
           <folding>
-            <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#1#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/parse_file2.py">
+    <entry file="file://$PROJECT_DIR$/parse_file2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        <state relative-caret-position="262">
+          <caret line="104" column="48" selection-start-line="104" selection-start-column="48" selection-end-line="104" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#2990#3243#0" />
+            <element signature="e#3287#3490#0" />
+            <element signature="e#3541#3705#0" />
+          </folding>
         </state>
       </provider>
     </entry>
