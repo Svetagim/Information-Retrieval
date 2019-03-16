@@ -102,7 +102,7 @@ def Filter_Index(doc_index):
     index += 1
 
     #trim bad chars + lower case
-    bad_chars = [",",".","--",";","#","!"]
+    bad_chars = [",",".","--",";","#","!",":","?"]
     for i in range(index, len(doc_index)):
         doc_index[i] = doc_index[i].lower()
         if((doc_index[i] not in bad_chars) and (doc_index[i] not in stopwords.words('english'))):
@@ -146,7 +146,6 @@ def Create_Inverted_File(indexCollection):
     newindexCol = connectToDB(indexCollection+"_new")
     length = indexCol.find().count()
     terms = indexCol.find()
-    counter = 0
     indicator = 0
     locations = []
 
@@ -169,6 +168,4 @@ def Create_Inverted_File(indexCollection):
         }
         newindexCol.insert_one(query)
         locations = []
-#doc id
-#hit
 
