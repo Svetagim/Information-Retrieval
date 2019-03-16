@@ -2,6 +2,7 @@ import parse_file
 import files_utils
 import multiprocessing
 
+
 def Insert_New_Docs():
     docs_arr = files_utils.Pull_Documents()  # Retrieve the docs available in the wait folder
     for doc in docs_arr:
@@ -22,6 +23,7 @@ def Insert_New_Docs():
     parse_file.Create_Inverted_File("indexCollection")
     files_utils.moveDocsBetweenDirs()
 
+
 def log(msg):
     print("- " + msg)
 
@@ -36,7 +38,8 @@ def Clear_Old_Record_in_DB():
     col_to_del = parse_file.connectToDB("inverted")
     col_to_del.delete_many({})
 
+
 if __name__ == '__main__':
-    Clear_Old_Record_in_DB()
+    #Clear_Old_Record_in_DB()
     Insert_New_Docs()
     exit(0)

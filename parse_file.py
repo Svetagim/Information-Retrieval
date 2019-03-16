@@ -4,7 +4,6 @@ from collections import Counter
 from nltk.corpus import stopwords
 
 
-
 def connectToDB(collection):
     myClient = pymongo.MongoClient("mongodb://127.0.0.1:27017/")
     mydb = myClient["ir"]
@@ -83,10 +82,10 @@ def Create_Doc_Index(doc):
     tokens = nltk.word_tokenize(sentence_data)
     for i, t in enumerate(tokens):
         if "'" in t:
-            if(len(t) == 3 and t[-2] == "'"):
+            if(t[-2] == "'"):
                 left = tokens[i - 1]
                 left += t
-                tokens[i - 1] = left
+                tokens[i - 1] = str(left)
                 del tokens[i]
                 i += 1
     return tokens
@@ -149,23 +148,31 @@ def Create_Inverted_File(indexCollection):
     indicator = 0
     locations = []
 
-    for i in range(0, length-1):
-        if(indicator >= length-1):
-            break
-        locations.append({'doc': terms[indicator]['doc'], 'hit': terms[indicator]['hit']})
-        term = terms[indicator]['term']
-        counter = 1
-        while True:
-            indicator += 1
-            if(terms[indicator]['term'] != term or indicator >= length):
+    for i in range(0, length):
+        try:
+            if(indicator > length-1):
                 break
             locations.append({'doc': terms[indicator]['doc'], 'hit': terms[indicator]['hit']})
-            counter += 1
-        query = {
-            "term": term,
-            "num_of_docs": counter,
-            "locations": locations
-        }
-        newindexCol.insert_one(query)
-        locations = []
-
+            term = terms[indicator]['term']
+            counter = 1
+            while True:
+                indicator += 1
+                if(indicator >= length):
+                    break
+                elif(terms[indicator]['term'] != term):
+                    break
+                locations.append({'doc': terms[indicator]['doc'], 'hit': terms[indicator]['hit']})
+                counter += 1
+            query = {
+                "term": term,
+                "num_of_docs": counter,
+                "locations": locations
+            }
+            newindexCol.insert_one(query)
+            locations = []
+        except:
+            print("Error!")
+            for i in range(0, length):
+                print(terms[i]['term'])
+            print("indicator: " + str(indicator))
+            print("Doc: " + str(terms[indicator-1]['doc']))
