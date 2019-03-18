@@ -1,7 +1,7 @@
 import pymongo
 import nltk
 from collections import Counter
-#from nltk.corpus import stopwords
+from nltk.corpus import stopwords
 
 
 def connectToDB(collection):
@@ -105,7 +105,8 @@ def Filter_Index(doc_index):
     #stopword =
     for i in range(index, len(doc_index)):
         doc_index[i] = doc_index[i].lower()
-        if((doc_index[i] not in bad_chars)):
+        stopWords = set(stopwords.words('english'))
+        if((doc_index[i] not in bad_chars) and (doc_index[i] not in stopWords)):
             doc_index_new.append(doc_index[i])
     return doc_index_new
 
