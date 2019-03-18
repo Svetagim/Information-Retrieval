@@ -6,6 +6,7 @@ import retrieve
 
 def Insert_New_Docs():
     docs_arr = files_utils.Pull_Documents()  # Retrieve the docs available in the wait folder
+    print(docs_arr)
     for doc in docs_arr:
         doc_index = parse_file.Create_Doc_Index(doc)
         doc_metadata = parse_file.Get_Doc_Metadata(doc_index)
@@ -15,6 +16,7 @@ def Insert_New_Docs():
         log("Insert doc metadata into the DB")
         parse_file.Insert_New_Doc_Record_to_DB(doc_metadata, docCol)
         doc_index = parse_file.Filter_Index(doc_index)
+        print(doc_index)
         log("Parsing the index")
         parse_file.Parse_Index(doc_index, doc_metadata[0], "indexCollection")
         doc.close()

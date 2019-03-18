@@ -5,6 +5,7 @@ import parse_file
 import admin_panel
 import main
 import files_utils
+import time
 
 app = Flask(__name__)
 
@@ -23,6 +24,8 @@ def search():
     if(indexCol.find().count() > 0):
         col = retrieve.showCollection("indexCollection_new")
         words = retrieve.findWords(data, col)
+        print(words)
+        print(len(words))
         docs = retrieve.query(words, len(words))
         col = retrieve.showCollection("docs")
         documents = retrieve.showDocs(docs, col)
@@ -137,7 +140,7 @@ def adminParam(param, state):
         main.Clear_Old_Record_in_DB()
         files_utils.RemoveAllDocs()
     elif param == "ret":
-        print("ret")
+        print("ret test")
         main.Insert_New_Docs()
     else:
         if state == "retrieved":

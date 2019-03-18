@@ -101,10 +101,11 @@ def Filter_Index(doc_index):
     index += 1
 
     #trim bad chars + lower case
-    bad_chars = [",",".","--",";","#","!",":","?"]
+    bad_chars = [",","(",")",",",".","--",";","#","!",":","?","\""]
     #stopword =
     for i in range(index, len(doc_index)):
         doc_index[i] = doc_index[i].lower()
+        doc_index[i] = doc_index[i].replace("''", "")
         stopWords = set(stopwords.words('english'))
         if((doc_index[i] not in bad_chars) and (doc_index[i] not in stopWords)):
             doc_index_new.append(doc_index[i])

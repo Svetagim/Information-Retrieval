@@ -5,17 +5,19 @@ import shutil
 
 
 # ----- Reading files from awaiting_documents folder -----
-path = 'awaiting_documents/*.txt'
-docs_path = glob.glob(path)
 
 
 # ----- Pull Document from 'awaiting_documents' and start handle him -----
 def Pull_Documents():
+    path = 'awaiting_documents/*.txt'
+    docs_path = glob.glob(path)
+
     docs_arr = []
     # Read each doc that located in the wait docs folder
     # and put them inside 'docs_arr' array
     for doc_name in docs_path:
         try:
+            print(doc_name)
             docs_arr.append(open(doc_name))
         except IOError as exc:
             if exc.errno != errno.EISDIR:

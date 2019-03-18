@@ -1,4 +1,3 @@
-import parse_file
 import nltk
 import pymongo
 import parse_file
@@ -68,8 +67,10 @@ def query(words, count):
         doc = []
         if docs[i] == "!":
             all = findAllDocs()
-            print(all)
-            res = list(set(all) - set(docs[i+1]))
+            if(docs[i+1]==[[]]):
+                res = all
+            else:
+                res = list(set(all) - set(docs[i+1]))
             docs[i + 1] = res
             del docs[i]
             print("docs after del: ",docs)
