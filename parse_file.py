@@ -21,7 +21,8 @@ def Insert_New_Doc_Record_to_DB(doc_metadata, docCollection):
         "id": doc_metadata[0],
         "name": doc_metadata[1],
         "author": doc_metadata[2],
-        "date_of_create": doc_metadata[3]
+        "date_of_create": doc_metadata[3],
+        "ignore": "false"
     }
     docCollection.insert_one(myquery)
 
