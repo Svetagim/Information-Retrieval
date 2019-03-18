@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4f81bbf-d9e0-4f34-9ea3-ab72ae3abfe6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/awaiting_documents/AMORET2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_panel.py" beforeDir="false" afterPath="$PROJECT_DIR$/admin_panel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/parse_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/parse_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/retrieve.py" beforeDir="false" afterPath="$PROJECT_DIR$/retrieve.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,78 +18,32 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.51231134">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/main.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="266">
-                  <caret line="57" column="17" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
-                  <folding>
-                    <element signature="e#96#935#0" />
-                    <element signature="e#1010#1351#0" />
-                    <element signature="e#1393#1614#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/parse_file.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="234">
-                  <caret line="207" column="37" selection-start-line="207" selection-start-column="37" selection-end-line="207" selection-end-column="37" />
-                  <folding>
-                    <element signature="e#0#14#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/files_utils.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-                  <folding>
-                    <element signature="e#0#11#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/retrieve.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="155">
-                  <caret line="75" column="28" lean-forward="true" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
-                  <folding>
-                    <element signature="e#0#11#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/server.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="291">
-                  <caret line="144" column="9" lean-forward="true" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
-                  <folding>
-                    <element signature="e#0#10#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+                <element signature="e#1018#1735#0" />
+                <element signature="e#1010#1351#0" />
+                <element signature="e#1393#1614#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/awaiting_documents/AMORET2.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="7" selection-start-column="7" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -108,6 +67,9 @@
       <find>beauty's</find>
       <find>done</find>
       <find>ret&quot;</find>
+      <find>retrieve</find>
+      <find>findWords</find>
+      <find>Awaiting Files</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -125,10 +87,13 @@
         <option value="$PROJECT_DIR$/awaiting_documents/amoret.txt" />
         <option value="$PROJECT_DIR$/parse_file2.py" />
         <option value="$PROJECT_DIR$/files_utils.py" />
+        <option value="$PROJECT_DIR$/parse_file.py" />
+        <option value="$PROJECT_DIR$/admin_panel.py" />
+        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/retrieve.py" />
         <option value="$PROJECT_DIR$/server.py" />
-        <option value="$PROJECT_DIR$/parse_file.py" />
-        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/static/style.css" />
+        <option value="$PROJECT_DIR$/awaiting_documents/AMORET2.txt" />
       </list>
     </option>
   </component>
@@ -151,7 +116,22 @@
             <path>
               <item name="Information-Retrieval" type="b2602c69:ProjectViewProjectNode" />
               <item name="Information-Retrieval" type="462c0819:PsiDirectoryNode" />
+              <item name="awaiting_documents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Information-Retrieval" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Information-Retrieval" type="462c0819:PsiDirectoryNode" />
+              <item name="documents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Information-Retrieval" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Information-Retrieval" type="462c0819:PsiDirectoryNode" />
               <item name="ignore_documents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Information-Retrieval" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Information-Retrieval" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -165,12 +145,13 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\benhay\Documents\PycharmProjects\Information_Retrieval\awaiting_documents" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\benhay\Documents\PycharmProjects\Information_Retrieval\awaiting_documents" />
       <recent name="C:\Users\benhay\Documents\PycharmProjects\Information_Retrieval\Docs" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/awaiting_documents" />
+      <recent name="C:\Users\benhay\Documents\PycharmProjects\Information_Retrieval\awaiting_documents" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -296,14 +277,21 @@
       <option name="project" value="LOCAL" />
       <updated>1552942129980</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="ignore system v1">
+      <created>1552944960718</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1552944960718</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16362192" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16362192" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -314,7 +302,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.50039715" side_tool="true" visible="true" weight="0.32739726" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.50039715" side_tool="true" visible="true" weight="0.32739726" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50039715" side_tool="true" weight="0.32739726" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32739726" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -348,7 +336,8 @@
     <MESSAGE value="boolean search fixed (!is)" />
     <MESSAGE value="before ignore system" />
     <MESSAGE value="ignore system" />
-    <option name="LAST_COMMIT_MESSAGE" value="ignore system" />
+    <MESSAGE value="ignore system v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignore system v1" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Docs/test.txt" />
@@ -377,11 +366,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/parse_file2.py" />
-    <entry file="file://$PROJECT_DIR$/static/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-690" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/documents/AMORET.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -399,55 +383,81 @@
     <entry file="file://$PROJECT_DIR$/templates/admin.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/retrieve.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="75" column="28" lean-forward="true" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="144" column="9" lean-forward="true" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/parse_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="207" column="37" selection-start-line="207" selection-start-column="37" selection-end-line="207" selection-end-column="37" />
+        <state relative-caret-position="117">
+          <caret line="198" column="92" selection-start-line="198" selection-start-column="92" selection-end-line="198" selection-end-column="92" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/files_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/retrieve.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="129" column="49" selection-start-line="129" selection-start-column="49" selection-end-line="129" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="104" column="16" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_panel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#75#529#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="57" column="17" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
+        <state relative-caret-position="328">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
           <folding>
-            <element signature="e#96#935#0" />
+            <element signature="e#0#17#0" expanded="true" />
+            <element signature="e#1018#1735#0" />
             <element signature="e#1010#1351#0" />
             <element signature="e#1393#1614#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/awaiting_documents/AMORET2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
         </state>
       </provider>
     </entry>

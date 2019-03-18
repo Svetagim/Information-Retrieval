@@ -107,8 +107,7 @@ def Filter_Index(doc_index):
     for i in range(index, len(doc_index)):
         doc_index[i] = doc_index[i].lower()
         doc_index[i] = doc_index[i].replace("''", "")
-        stopWords = set(stopwords.words('english'))
-        if((doc_index[i] not in bad_chars) and (doc_index[i] not in stopWords)):
+        if(doc_index[i] not in bad_chars):
             doc_index_new.append(doc_index[i])
     return doc_index_new
 
@@ -191,12 +190,13 @@ def Create_Inverted_File(indexCollection):
     terms = indexCol.find()
     indicator = 0
     locations = []
+    stopWords = set(stopwords.words('english'))
 
     for i in range(0, length):
         try:
             if(indicator > length-1):
                 break
-            locations.append({'doc': terms[indicator]['doc'], 'hit': terms[indicator]['hit'], 'ignore': "false"})
+            locations.append({'doc': terms[indicator]['doc'], 'hit': terms[indicator]['hit']})
             term = terms[indicator]['term']
             counter = 1
             while True:
@@ -205,14 +205,24 @@ def Create_Inverted_File(indexCollection):
                     break
                 elif(terms[indicator]['term'] != term):
                     break
-                locations.append({'doc': terms[indicator]['doc'], 'hit': terms[indicator]['hit'], 'ignore': "false"})
+                locations.append({'doc': terms[indicator]['doc'], 'hit': terms[indicator]['hit']})
                 counter += 1
-            query = {
-                "term": term,
-                "soundex": sdx(term),
-                "num_of_docs": counter,
-                "locations": locations
-            }
+            if(term not in stopWords):
+                query = {
+                    "term": term,
+                    "soundex": sdx(term),
+                    "stopword": "false",
+                    "num_of_docs": counter,
+                    "locations": locations
+                }
+            else:
+                query = {
+                    "term": term,
+                    "soundex": sdx(term),
+                    "stopword": "true",
+                    "num_of_docs": counter,
+                    "locations": locations
+                }
             newindexCol.insert_one(query)
             locations = []
         except():

@@ -1,7 +1,7 @@
 import parse_file
 import files_utils
 import server
-import retrieve
+import shutil
 
 
 def Insert_New_Docs():
@@ -46,19 +46,38 @@ def Ignore_Document(doc_name):
             }
         }
         docsCol.update_one(query,newquery)
-        indexCol = parse_file.connectToDB("indexCollection_new")
+
+        dest = 'ignore_documents/'
+        source = 'documents/'
+        shutil.move(source + doc_name + ".txt", dest + doc_name + ".txt")
+        return True
+    except:
+        print("No record!")
+
+def UnIgnore_Document(doc_name):
+    docsCol = parse_file.connectToDB("docs")
+    query = {
+        "name": doc_name
+    }
+    document = docsCol.find_one(query)
+    try:
+        print(document['name'])
         query = {
-            "locations.doc": document['id'],
-            "ignore": "false"
+            "_id": document['_id'],
+            "ignore": "true"
         }
         newquery = {
-            "locations.doc": document['id'],
-            "locations.ignore": "true"
+            "$set":{
+                "_id": document['_id'],
+                "ignore": "false"
+            }
         }
-        indexCol.update_many(query,newquery)
-        #indexRecords = indexCol.find(query)
-        #for item in indexRecords:
-        #    query
+        docsCol.update_one(query,newquery)
+
+        source = 'ignore_documents/'
+        dest = 'documents/'
+        shutil.move(source + doc_name + ".txt", dest + doc_name + ".txt")
+        return True
     except:
         print("No record!")
 

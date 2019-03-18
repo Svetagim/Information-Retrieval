@@ -16,6 +16,7 @@ def index():
 
 
 @app.route('/index.html')
+@app.route('/index.html')
 def search():
     data = request.args.get('search')
     if data == "":
@@ -24,8 +25,6 @@ def search():
     if(indexCol.find().count() > 0):
         col = retrieve.showCollection("indexCollection_new")
         words = retrieve.findWords(data, col)
-        print(words)
-        print(len(words))
         docs = retrieve.query(words, len(words))
         col = retrieve.showCollection("docs")
         documents = retrieve.showDocs(docs, col)
@@ -36,8 +35,17 @@ def search():
             soup = bs4.BeautifulSoup(txt, features="html.parser")
         for document in documents:
             new_link = soup.new_tag("a", target="_blank", href="/documents/{}".format(document[0]))
-            new_link.string = document[0]
             soup.section.append(new_link)
+
+            p = soup.new_tag("p")
+            p['class'] = "meta"
+            p.string = document[0] + " / " + document[1] + " / " + document[2]
+            new_link.append(p)
+
+            div = soup.new_tag("div")
+            div['class'] = "clear"
+            soup.section.append(div)
+
 
         return str(soup)
     else:
@@ -85,6 +93,7 @@ def displayDoc(name):
 def admin():
     aFiles = admin_panel.WaitingFiles()
     rFiles = admin_panel.retrievedFiles()
+    iFiles = admin_panel.ignoredFiles()
     with open("templates/admin.html") as inf:
         txt = inf.read()
         soup = bs4.BeautifulSoup(txt, features="html.parser")
@@ -130,6 +139,23 @@ def admin():
     new_link = soup.new_tag("div")
     new_link['class'] = "clear"
     soup.section.append(new_link)
+    new_link = soup.new_tag("h3")
+    new_link['class'] = "header"
+    new_link.string = "Ignored Files"
+    soup.section.append(new_link)
+    for file in iFiles:
+        new_link = soup.new_tag("a", href="admin.html/{}/unignore".format(file))
+        new_link['class'] = "awaiting"
+        new_link['id'] = "documents/{}".format(file)
+        new_link.string = file
+        soup.section.append(new_link)
+        new_link = soup.new_tag("p")
+        new_link['class'] = "awaiting"
+        new_link.string = "|"
+        soup.section.append(new_link)
+    new_link = soup.new_tag("div")
+    new_link['class'] = "clear"
+    soup.section.append(new_link)
 
     return str(soup)
 
@@ -140,15 +166,19 @@ def adminParam(param, state):
         main.Clear_Old_Record_in_DB()
         files_utils.RemoveAllDocs()
     elif param == "ret":
-        print("ret test")
         main.Insert_New_Docs()
     else:
         if state == "ignore":
             main.log("ignoring: " + param)
             main.Ignore_Document(param)
             print("done")
+        elif state == "unignore":
+            main.log("Unignoring: " + param)
+            main.UnIgnore_Document(param)
+            print("done")
         else:
             print("wait")
+
 
 
     return redirect("/admin.html")

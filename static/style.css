@@ -98,3 +98,9 @@ h1.res{
     margin-left: 60px;
     color: 	#b23762;
 }
+
+.meta{
+    float: left;
+    margin-right: 30px;
+    font-size:15px;
+}

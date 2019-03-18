@@ -17,6 +17,15 @@ def findAllDocs():
         docs.append(res["id"])
     return docs
 
+def CheckIfDocIgnored(doc_id):
+    docsCol = parse_file.connectToDB("docs")
+    query = {
+        "id": doc_id
+    }
+    document = docsCol.find_one(query)
+    ignore = document['ignore']
+
+    return ignore
 
 def findWords(str , col):
     words = []
@@ -115,7 +124,9 @@ def showDocs(docs, col):
         print('searchResults {}'.format(searchResult))
         if searchResult is None:
             return ""
-        d.append(searchResult["name"])
-        d.append(searchResult["author"])
-        documents.append(d)
+        if(CheckIfDocIgnored(doc)=="false"):
+            d.append(searchResult["name"])
+            d.append(searchResult["author"])
+            d.append(searchResult["date_of_create"])
+            documents.append(d)
     return documents
