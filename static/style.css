@@ -1,0 +1,100 @@
+*{
+    font-family: Courier, Monaco, monospace;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+}
+body {
+     background: url(Documents.jpg);
+     background-repeat: no-repeat;
+     background-size: 100% 100vh;
+     background-color: black;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+h1 {
+    color: 	#b23762;
+    text-align: center;
+    padding-top: 150px;
+    font-size: 45px;
+}
+
+input{
+    width: 450px;
+    height: 50px;
+    margin: 0px auto;
+    float: left;
+}
+
+.btn{
+    width: 80px;
+    float: left;
+    margin-left: 10px;
+}
+
+form{
+    margin-left: 31%;
+    margin-bottom: 100px;
+    display: block;
+}
+
+a{
+    display: block;
+    color: 	#eee3e7;
+    weight: bold;
+    margin-left: 70px;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.clear{
+    clear: both;
+}
+
+
+h1.res{
+    margin-top: 50px;
+    padding-top: 00px;
+    text-align: left;
+}
+
+
+.res{
+    margin-left: 70px;
+}
+
+
+.btn-link{
+    color: 	#b23762;
+}
+
+
+.awaiting{
+    display: block;
+    color: 	#eee3e7;
+    margin-left: 60px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    float: left;
+}
+
+.retrieve{
+    display: block;
+    color: 	#b23762;
+    margin-left: 60px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    float: left;
+}
+
+
+.header{
+    margin-left: 60px;
+    color: 	#b23762;
+}

@@ -37,8 +37,15 @@ def Ignore_Document(doc_name):
         print(document['name'])
         query = {
             "_id": document['_id'],
+            "ignore": "false"
         }
-        docsCol.find_and_modify(query)
+        newquery = {
+            "$set":{
+                "_id": document['_id'],
+                "ignore": "true"
+            }
+        }
+        docsCol.update_one(query)
     except:
         print("No record!")
 
