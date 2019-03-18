@@ -114,7 +114,7 @@ def admin():
     new_link.string = "Retrieved Files"
     soup.section.append(new_link)
     for file in rFiles:
-        new_link = soup.new_tag("a", href="admin.html/{}/retrieved".format(file))
+        new_link = soup.new_tag("a", href="admin.html/{}/ignore".format(file))
         new_link['class'] = "awaiting"
         new_link['id'] = "documents/{}".format(file)
         new_link.string = file
@@ -143,9 +143,9 @@ def adminParam(param, state):
         print("ret test")
         main.Insert_New_Docs()
     else:
-        if state == "retrieved":
-            print("retrieved")
-            main.Clear_One_Record_in_DB(param)
+        if state == "ignore":
+            main.log("ignoring: " + param)
+            main.Ignore_Document(param)
             print("done")
         else:
             print("wait")

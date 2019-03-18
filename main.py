@@ -27,6 +27,22 @@ def Insert_New_Docs():
     files_utils.moveDocsBetweenDirs()
 
 
+def Ignore_Document(doc_name):
+    docsCol = parse_file.connectToDB("docs")
+    query = {
+        "name": doc_name
+    }
+    document = docsCol.find_one(query)
+    try:
+        print(document['name'])
+        query = {
+            "_id": document['_id'],
+        }
+        docsCol.find_and_modify(query)
+    except:
+        print("No record!")
+
+
 def log(msg):
     print("- " + msg)
 
