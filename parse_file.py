@@ -1,7 +1,7 @@
 import pymongo
 import nltk
 from collections import Counter
-from nltk.corpus import stopwords
+#from nltk.corpus import stopwords
 
 
 def connectToDB(collection):
@@ -102,9 +102,10 @@ def Filter_Index(doc_index):
 
     #trim bad chars + lower case
     bad_chars = [",",".","--",";","#","!",":","?"]
+    #stopword =
     for i in range(index, len(doc_index)):
         doc_index[i] = doc_index[i].lower()
-        if((doc_index[i] not in bad_chars) and (doc_index[i] not in stopwords.words('english'))):
+        if((doc_index[i] not in bad_chars)):
             doc_index_new.append(doc_index[i])
     return doc_index_new
 
@@ -211,7 +212,7 @@ def Create_Inverted_File(indexCollection):
             }
             newindexCol.insert_one(query)
             locations = []
-        except:
+        except():
             print("Error!")
             for i in range(0, length):
                 print(terms[i]['term'])

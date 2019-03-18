@@ -84,3 +84,18 @@ def moveDocsBetweenDirs():
     for f in files:
          shutil.move(source+f, dest+f)
     return True
+
+def RemoveAllDocs():
+    dest = 'awaiting_documents/'
+    source = 'documents/'
+    files = os.listdir(source)
+
+    for f in files:
+         shutil.move(source+f, dest+f)
+    return True
+
+def moveBackBetweenDirs(file):
+    dest = 'awaiting_documents/'
+    source = 'documents/'
+    shutil.move(source+file+".txt", dest+file+".txt")
+    return True
