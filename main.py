@@ -45,7 +45,20 @@ def Ignore_Document(doc_name):
                 "ignore": "true"
             }
         }
-        docsCol.update_one(query)
+        docsCol.update_one(query,newquery)
+        indexCol = parse_file.connectToDB("indexCollection_new")
+        query = {
+            "locations.doc": document['id'],
+            "ignore": "false"
+        }
+        newquery = {
+            "locations.doc": document['id'],
+            "locations.ignore": "true"
+        }
+        indexCol.update_many(query,newquery)
+        #indexRecords = indexCol.find(query)
+        #for item in indexRecords:
+        #    query
     except:
         print("No record!")
 

@@ -196,7 +196,7 @@ def Create_Inverted_File(indexCollection):
         try:
             if(indicator > length-1):
                 break
-            locations.append({'doc': terms[indicator]['doc'], 'hit': terms[indicator]['hit']})
+            locations.append({'doc': terms[indicator]['doc'], 'hit': terms[indicator]['hit'], 'ignore': "false"})
             term = terms[indicator]['term']
             counter = 1
             while True:
@@ -205,7 +205,7 @@ def Create_Inverted_File(indexCollection):
                     break
                 elif(terms[indicator]['term'] != term):
                     break
-                locations.append({'doc': terms[indicator]['doc'], 'hit': terms[indicator]['hit']})
+                locations.append({'doc': terms[indicator]['doc'], 'hit': terms[indicator]['hit'], 'ignore': "false"})
                 counter += 1
             query = {
                 "term": term,
