@@ -5,7 +5,7 @@ import parse_file
 import admin_panel
 import main
 import files_utils
-import time
+import nltk
 
 app = Flask(__name__)
 
@@ -34,7 +34,11 @@ def search():
             txt = inf.read()
             soup = bs4.BeautifulSoup(txt, features="html.parser")
         for document in documents:
-            new_link = soup.new_tag("a", target="_blank", href="/documents/{}".format(document[0]))
+            #PASS the words to mark them
+            #data2 = retrieve.findWordsToQuery(data)
+            #print(data2[0])
+            #END PASS words
+            new_link = soup.new_tag("a", target="_blank", href="/documents/{0}?words_to_mark={1}".format(document[0], data2))
             soup.section.append(new_link)
 
             p = soup.new_tag("p")

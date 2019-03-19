@@ -29,9 +29,17 @@ def CheckIfDocIgnored(doc_id):
 
     return ignore
 
+def findWordsToQuery(str):
+    words = []
+    # stopWords = set(stopwords.words('english'))
+    wordsTokenized = nltk.word_tokenize(str)
+    for word in wordsTokenized:
+        if (word != '&' and word != '|' and word != '!' and word != '(' and word != ')'):
+            words.append(word)
+    return words
+
 def findWords(str , col):
     words = []
-    #stopWords = set(stopwords.words('english'))
     wordsTokenized = nltk.word_tokenize(str)
     for word in wordsTokenized:
         docs = []
