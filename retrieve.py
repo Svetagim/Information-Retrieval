@@ -1,5 +1,7 @@
 import nltk
 import pymongo
+from nltk.corpus import stopwords
+
 import parse_file
 
 
@@ -29,6 +31,7 @@ def CheckIfDocIgnored(doc_id):
 
 def findWords(str , col):
     words = []
+    #stopWords = set(stopwords.words('english'))
     wordsTokenized = nltk.word_tokenize(str)
     for word in wordsTokenized:
         docs = []
@@ -36,7 +39,7 @@ def findWords(str , col):
             words.append(word)
             continue
         sound = parse_file.sdx(word)
-        searchResult = col.find_one({"soundex": sound})
+        searchResult = col.find_one({"soundex": sound, "stopword": {"$eq": "false"}})
         if(searchResult):
             for i in searchResult["locations"]:
                 docs.append(i["doc"])
