@@ -166,6 +166,8 @@ def adminParam(param, state):
         main.Clear_Old_Record_in_DB()
         files_utils.RemoveAllDocs()
     elif param == "ret":
+        main.Clear_Old_Record_in_DB()
+        files_utils.RemoveAllDocs()
         main.Insert_New_Docs()
     else:
         if state == "ignore":
