@@ -38,7 +38,7 @@ def search():
             #data2 = retrieve.findWordsToQuery(data)
             #print(data2[0])
             #END PASS words
-            new_link = soup.new_tag("a", target="_blank", href="/documents/{0}?words_to_mark={1}".format(document[0], data2))
+            new_link = soup.new_tag("a", target="_blank", href="/documents/{0}".format(document[0]))
             soup.section.append(new_link)
 
             p = soup.new_tag("p")

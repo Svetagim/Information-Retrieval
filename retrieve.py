@@ -41,13 +41,24 @@ def findWordsToQuery(str):
 def findWords(str , col):
     words = []
     wordsTokenized = nltk.word_tokenize(str)
+    flag = "False"
     for word in wordsTokenized:
         docs = []
+        print(word)
         if (word=='&' or word=='|' or word=='!' or word=='(' or word==')'):
             words.append(word)
             continue
-        sound = parse_file.sdx(word)
-        searchResult = col.find_one({"soundex": sound, "stopword": {"$eq": "false"}})
+        if word == '\'\'' or word == '``':
+            flag = "True"
+            print(flag)
+            continue
+        if flag == "False":
+            sound = parse_file.sdx(word)
+            searchResult = col.find_one({"soundex": sound, "stopword": {"$eq": "false"}})
+        else:
+            sound = parse_file.sdx(word)
+            searchResult = col.find_one({"soundex": sound})
+
         if(searchResult):
             for i in searchResult["locations"]:
                 docs.append(i["doc"])
